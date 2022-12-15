@@ -25,7 +25,7 @@ namespace Task_01
 
             List<byte> numList= new List<byte>();
 
-            for (byte step=0; step<=100; step++)
+            for (byte step = 0; step <= 100; step++)
                 numList.Add((byte)rndmNum.Next(0, 101));
 
             return numList;
@@ -44,8 +44,11 @@ namespace Task_01
         static List<byte> FilterList(List<byte> srcList)
         {
             for (byte step=0; step<srcList.Count; step++)
-                if (srcList[step] > 25 && srcList[step] < 50) 
+                if (srcList[step] > 25 && srcList[step] < 50)
+                {
                     srcList.RemoveAt(step);
+                    step--;
+                }
 
             return srcList;
         }
